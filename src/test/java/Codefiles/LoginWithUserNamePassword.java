@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class LoginWithUserNamePassword extends Logincode {
 
-WebDriver driver;
+
 
     @FindBy(xpath = "//input[@id='txt-username']")
     static WebElement UserName;
@@ -23,12 +23,11 @@ WebDriver driver;
     static WebElement Login;
 
     public LoginWithUserNamePassword(WebDriver driver) throws IOException {
-    this.driver=driver;
-        PageFactory.initElements(driver,this);
+        super(driver);
     }
 
 
-    @Test
+        @Test
     public void Enter_Username_Password_and_login(){
 
         UserName.sendKeys("John Doe");

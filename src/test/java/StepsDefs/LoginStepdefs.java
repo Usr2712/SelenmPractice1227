@@ -14,12 +14,13 @@ import java.io.IOException;
 import static Codefiles.Logincode.driver;
 
 
-public class LoginStepdefs {
+public class LoginStepdefs extends Logincode{
 
-    Logincode logincode = new Logincode();
+    Logincode logincode = new Logincode(driver);
     LoginWithUserNamePassword loginWithUserNamePassword = new LoginWithUserNamePassword(driver);
 
     public LoginStepdefs() throws IOException {
+        super(driver);
 
     }
     @Given("User opens the website")

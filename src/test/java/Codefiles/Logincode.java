@@ -28,7 +28,9 @@ public class Logincode {
             throw new RuntimeException(e);
         }
     }
-    public Logincode() throws IOException {
+    public Logincode( WebDriver driver) throws IOException {
+        this.driver = driver;
+        PageFactory.initElements(driver,this);
     }
     public static void  SetDriver() throws IOException {
         prop.load(File);
