@@ -30,19 +30,27 @@ public class Logincode {
     }
     public Logincode() throws IOException {
     }
-    public void  SetDriver() throws IOException {
+    public static void  SetDriver() throws IOException {
         prop.load(File);
 
         if (prop.getProperty("Browser").equals("Chrome")) {
             System.setProperty("webdriver.chrome.driver", "C:\\Intel\\chromedriver-win64\\chromedriver.exe");
             driver = new ChromeDriver();
     }
+
     }
+
+    public static WebDriver getdriver () throws IOException {
+        SetDriver();
+        return driver;
+
+    }
+
 
     @Test
     public void OpenBrowser() throws IOException {
 
-          driver.get(prop.getProperty("Url"));
+          getdriver().get(prop.getProperty("Url"));
           driver.manage().window().maximize();
 
         }
