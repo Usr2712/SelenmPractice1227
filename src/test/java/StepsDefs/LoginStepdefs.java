@@ -5,30 +5,27 @@ import Codefiles.Logincode;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 
-import java.io.FileNotFoundException;
+
+
 import java.io.IOException;
 
 import static Codefiles.Logincode.driver;
 
 
-public class LoginStepdefs extends Logincode{
+public class LoginStepdefs {
 
-    Logincode logincode = new Logincode(driver);
+    Logincode logincode = new Logincode();
     LoginWithUserNamePassword loginWithUserNamePassword = new LoginWithUserNamePassword(driver);
 
-    public LoginStepdefs() throws IOException {
-        super(driver);
 
-    }
     @Given("User opens the website")
     public void user_opens_the_website() throws IOException {
 
         logincode.OpenBrowser();
 
     }
+
     @When("user enter username and password")
     public void userEnterUsernameAndPassword() {
 
